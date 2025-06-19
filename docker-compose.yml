@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  solr:
+    build:
+      context: ./solr
+    ports:
+      - 8985:8983
+    volumes:
+      - solr-data:/opt/solr/server/solr/ckan/data
+    command: solr-create -c vivocore -d /opt/vivocore
+    restart: always
+
+  vivo:
+    build:
+      context: ./
+    volumes:
+#      - ./example-config:/usr/local/vivo/home/config
+      - vivo-home:/usr/local/data/home
+    ports:
+      - 8082:8080
+    restart: always
+
+volumes:
+  solr-data:
+  vivo-home:

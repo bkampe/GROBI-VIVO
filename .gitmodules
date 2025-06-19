@@ -1,0 +1,6 @@
+[submodule "VIVO"]
+	path = VIVO
+	url = git@git.tib.eu:OSL/VIVO/vivo_1.12.git
+[submodule "Vitro"]
+	path = Vitro
+	url = git@git.tib.eu:OSL/VIVO/vitro_1.12.git
