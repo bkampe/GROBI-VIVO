@@ -1,0 +1,6 @@
+stages:          # List of stages for jobs, and their order of execution
+  - build
+
+build:
+  stage: build
+  script: docker-compose -f docker-compose.yml --build
