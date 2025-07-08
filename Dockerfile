@@ -9,8 +9,8 @@ RUN ls -la /usr/local/
 RUN git submodule init
 RUN git submodule update
 
-COPY ./Vitro Vitro
-COPY ./VIVO VIVO
+COPY ../../Vitro Vitro
+COPY ../../VIVO VIVO
 COPY ./project-installer project-installer
 COPY ./project-settings-local.xml project-settings-local.xml
 
