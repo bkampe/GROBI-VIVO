@@ -5,12 +5,15 @@ RUN apt-get update && apt-get install -y default-jdk maven ca-certificates-java 
 WORKDIR /usr/local/
 
 COPY ./ /
-RUN ls -la /usr/local/
 RUN git submodule init
 RUN git submodule update
 
-COPY ../../Vitro Vitro
-COPY ../../VIVO VIVO
+RUN ls -la /usr/local/
+RUN ls -la /usr/
+RUN ls -la /
+
+COPY //Vitro Vitro
+COPY //VIVO VIVO
 COPY ./project-installer project-installer
 COPY ./project-settings-local.xml project-settings-local.xml
 
