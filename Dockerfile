@@ -6,8 +6,6 @@ WORKDIR /usr/local/
 
 COPY ./Vitro Vitro
 COPY ./VIVO VIVO
-#COPY ./Vitro-languages Vitro-languages
-#COPY ./VIVO-languages VIVO-languages
 COPY ./project-installer project-installer
 COPY ./project-settings-local.xml project-settings-local.xml
 
@@ -15,8 +13,8 @@ WORKDIR /usr/local/VIVO/
 
 RUN ls -la ./
 RUN ls -la /usr/local/VIVO/
-RUN ls -la /usr/local/
-RUN ls -la /usr/
+RUN ls -la /usr/local/Vitro
+RUN ls -la /usr/local/project-installer/
 
 RUN mvn clean install -DskipTests -Dcheckstyle.skip -s ../project-settings-local.xml -f pom.xml
 
