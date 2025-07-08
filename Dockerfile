@@ -4,6 +4,8 @@ FROM debian:10-slim AS build
 RUN apt-get update && apt-get install -y default-jdk maven ca-certificates-java  git
 WORKDIR /usr/local/
 
+RUN git submodule update --init --recursive
+
 COPY ./Vitro Vitro
 COPY ./VIVO VIVO
 COPY ./project-installer project-installer
