@@ -5,7 +5,9 @@ RUN apt-get update && apt-get install -y default-jdk maven ca-certificates-java 
 WORKDIR /usr/local/
 
 COPY ./* /
-RUN git submodule update --init --recursive
+RUN ls -la /usr/local/
+RUN git submodule init
+RUN git submodule update
 
 #COPY ./Vitro Vitro
 #COPY ./VIVO VIVO
