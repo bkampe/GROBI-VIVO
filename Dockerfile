@@ -4,12 +4,13 @@ FROM debian:10-slim AS build
 RUN apt-get update && apt-get install -y default-jdk maven ca-certificates-java  git
 WORKDIR /usr/local/
 
+COPY ./* /
 RUN git submodule update --init --recursive
 
-COPY ./Vitro Vitro
-COPY ./VIVO VIVO
-COPY ./project-installer project-installer
-COPY ./project-settings-local.xml project-settings-local.xml
+#COPY ./Vitro Vitro
+#COPY ./VIVO VIVO
+#COPY ./project-installer project-installer
+#COPY ./project-settings-local.xml project-settings-local.xml
 
 WORKDIR /usr/local/VIVO/
 
