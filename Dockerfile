@@ -4,7 +4,7 @@ FROM debian:10-slim AS build
 RUN apt-get update && apt-get install -y default-jdk maven ca-certificates-java  git
 WORKDIR /usr/local/
 
-COPY ./ /
+COPY ./ ./
 RUN git submodule init
 RUN git submodule update
 
