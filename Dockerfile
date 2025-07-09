@@ -8,25 +8,14 @@ COPY ./ ./
 RUN git submodule init
 RUN git submodule update
 
-RUN ls -la /usr/local/
-RUN ls -la /usr/
-RUN ls -la /
-
-COPY //Vitro Vitro
-COPY //VIVO VIVO
+COPY ./Vitro Vitro
+COPY ./VIVO VIVO
 COPY ./project-installer project-installer
 COPY ./project-settings-local.xml project-settings-local.xml
 
-RUN ls -la /usr/local/
-
 WORKDIR /usr/local/VIVO/
 
-RUN ls -la ./
-RUN ls -la /usr/local/VIVO/
-RUN ls -la /usr/local/Vitro
-RUN ls -la /usr/local/project-installer/
-
-RUN mvn clean install -DskipTests -Dcheckstyle.skip -s ../project-settings-local.xml -f pom.xml
+RUN mvn clean install -DskipTests -Dcheckstyle.skip -s ../project-settings-local.xml
 
 FROM tomcat:9.0.21-jdk11-openjdk
 COPY --from=build /usr/local/VIVO /usr/local/VIVO
