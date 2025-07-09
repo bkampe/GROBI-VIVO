@@ -1,5 +1,5 @@
 #FROM tomcat:9.0.21-jdk11-openjdk
-FROM debian:10-slim AS build
+FROM debian:12-slim AS build
 
 RUN apt-get update && apt-get install -y default-jdk maven ca-certificates-java  git
 WORKDIR /usr/local/
