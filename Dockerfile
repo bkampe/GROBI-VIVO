@@ -15,6 +15,8 @@ COPY ./project-settings-local.xml project-settings-local.xml
 
 WORKDIR /usr/local/VIVO/
 
+RUN mvn -v
+
 RUN mvn clean install -DskipTests -Dcheckstyle.skip -s ../project-settings-local.xml
 
 FROM tomcat:9.0.21-jdk11-openjdk
