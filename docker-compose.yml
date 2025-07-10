@@ -1,5 +1,6 @@
 services:
   solr:
+    image: bkampe/grobi-vivo-solr
     build:
       context: ./solr
     ports:
@@ -10,6 +11,7 @@ services:
     restart: always
 
   vivo:
+    image: bkampe/grobi-vivo-vivo
     build:
       context: ./
     volumes:
